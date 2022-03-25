@@ -1,0 +1,253 @@
+:root {
+  --clr-neutral-100: hsl(0 0% 100%);
+  --clr-neutral-200: rgb(240, 243, 255);
+  --clr-neutral-400: rgb(133, 147, 184);
+  --clr-neutral-800: hsl(223, 47%, 23%);
+
+  --clr-primary-200: hsl(225, 100%, 94%);
+  --clr-primary-300: hsl(245, 83%, 68%, 1);
+  --clr-primary-400: hsl(245, 75%, 52%);
+
+  --fs-700: 1.75rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+
+  --fw-400: 500;
+  --fw-700: 700;
+  --fw-900: 900;
+
+}
+
+/*box sizing rules*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*remove default margin*/
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/*remove list style on ul, ol elements with ...*/
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/*set core root*/
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/*set core body default*/
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/*A elements that don't have a class get default*/
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/*make image easier to work with*/
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/*Inherit fonts for inputs and buttons*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*remove all animation, transitions an smooths*/
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body{
+  font-family: "Red Hat", sans-serif;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-00);
+  line-height: 1.6;
+  color: var(--clr-neutral-400);
+  background: var(--clr-primary-200);
+
+  /*layout page*/
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+h1, 
+h2, 
+h3{
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: var(--fs-700);
+  font-weight: var(--fw-900);
+  color: var(--clr-neutral-800);
+}
+
+
+/*Composition*/
+.gridFlow {
+  display: grid; /*  */
+  gap: var(--gap, 1rem);
+}
+
+.flexRow {
+  display: flex; 
+  gap: var(--gap, 1rem);
+}
+
+/*Utility*/
+.padding_24 {
+  padding: 1.5rem;
+}
+
+.padding_48 {
+  padding: 3rem;
+}
+
+.textDark{
+  color: var(--clr-neutral-800);
+}
+
+.textMedium {
+  color: var(--clr-neutral-400);
+}
+
+.bgLight {
+  background-color: var(--clr-neutral-200);
+}
+
+.bgWhite {
+  background-color: var(--clr-neutral-100);
+}
+
+.textAlignLeft {
+  text-align: start;
+}
+
+.textAlignCenter {
+  text-align: center;
+}
+
+.textAlignRight {
+  text-align: end;
+}
+
+.pushRight {
+  margin-left: auto;
+}
+
+.fwBold {
+  font-weight: var(--fw-700);
+}
+
+.fwBlack {
+  font-weight: var(--fw-900);
+}
+
+.br-1 {
+  border-radius: 0.5rem;
+}
+
+.br-2{
+  border-radius: 1rem;
+}
+
+a,
+.link {
+  background: transparent;
+  border: 0;
+  color: var(--clr-primary-400);
+  text-decoration: underline;
+  font-weight: var(--fw-700);
+}
+
+a:hover,
+a:focus,
+.link:hover,
+.link:focus {
+  color: var(--clr-primary-300);
+  text-decoration: none;
+}
+
+/*block width card*/
+.button {
+  font-weight: var(--fw-700);
+  background: transparent;
+  padding: .75em  1em;
+  border-radius: 0.5rem;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button[data-type="primary"] {
+  background: var(--clr-primary-400);
+  color: var(--clr-neutral-200);
+}
+
+.button[data-type="basic"] {
+  color: var(--clr-neutral-400);
+  padding: 0;
+}
+
+.button[data-type="primary"]:hover,
+.button[data-type="primary"]:focus {
+  background: var(--clr-primary-300);
+}
+
+.button[data-type="basic"]:hover,
+.button[data-type="basic"]:focus {
+  color: var(--clr-neutral-800);
+}
+
+.card {
+  overflow: hidden; 
+  max-width: 450px;
+
+position: relative;
+z-index: 1;
+}
+
+.pattern {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  
+}
